@@ -1,0 +1,20 @@
+table {
+    margin: 10px;
+    border: 8px solid rgb(255, 230, 0);
+    border-radius: 4px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.blackCell{
+    background-color: black;
+}
+
+.whiteCell{
+    background-color: rgb(248, 247, 236);
+}
