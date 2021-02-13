@@ -11,10 +11,13 @@
 
 <body>
     <h1>PHP-Intro</h1>
-    <?php include "PHP-Intro/fragments/nav.html"?>
+    <?php include "1-PHP-Intro/fragments/nav.html"?>
     <br>
     <h1>PHP-Tables</h1>
-    <?php include "PHP-Tables/fragments/nav.html"?>
+    <?php include "2-PHP-Tables/fragments/nav.html"?>
+    <br>
+    <h1>PHP-Form</h1>
+    <?php include "3-PHP-Form/fragments/nav-form.html"?>
 
 
 </body>

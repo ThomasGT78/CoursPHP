@@ -1,0 +1,22 @@
+{
+  "name": "projets_php",
+  "version": "1.0.0",
+  "description": "Cours PHP Tables",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasGT78/CoursPHP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasGT78/CoursPHP/issues"
+  },
+  "homepage": "https://github.com/ThomasGT78/CoursPHP#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  }
+}
