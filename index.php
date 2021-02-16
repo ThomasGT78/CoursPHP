@@ -10,16 +10,39 @@
 </head>
 
 <body>
-    <h1>PHP-Intro</h1>
-    <?php include "1-PHP-Intro/fragments/nav.html"?>
-    <br>
-    <h1>PHP-Tables</h1>
-    <?php include "2-PHP-Tables/fragments/nav.html"?>
-    <br>
-    <h1>PHP-Form</h1>
-    <?php include "3-PHP-Form/fragments/nav-form.html"?>
-
+    <h1>Cours PHP</h1>
+    <div class="container">
+        <div class="chapter">
+            <h3>PHP-Intro</h3>
+            <?php include "1-PHP-Intro/fragments/nav-intro.html"?>
+        </div>
+        <div class="chapter">
+            <h3>PHP-Tables</h3>
+            <?php include "2-PHP-Tables/fragments/nav-table.html"?>
+        </div>
+        <div class="chapter">
+            <h3>PHP-Form</h3>
+            <?php include "3-PHP-Form/fragments/nav-form.html"?>
+        </div>
+        <div class="chapter">
+            <h3>PHP-Persitence</h3>
+            <?php include "4-PHP-Persistence/fragments/nav-persistence.html"?>
+        </div>
+    </div>
 
 </body>
 
 </html>
+
+<style>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.chapter {
+    margin: 1%;
+    padding: 1%;
+}
+</style>
