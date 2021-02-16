@@ -1,39 +1,28 @@
 <?php
 require "function-security.php";
 
- 
 $usersData = getUserList();
-
     
             /****************
              *  SAVE Data   *
              ***************/
-$isPosted = filter_has_var(INPUT_POST, "username");
+$isPosted = filter_has_var(INPUT_POST, "login");
 
 if($isPosted){
-    $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_STRING);
     $login = filter_input(INPUT_POST,"login", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST,"password", FILTER_DEFAULT);
-    $hash = password_hash($password, PASSWORD_BCRYPT);
-
 
     // Ajout des données des input seulement si la saisie n'est pas vide
-    if (!empty($username) && !empty($login) && !empty($password)) {
+    if (!empty($login) && !empty($password)) {
         $newUser = [
-            "username" => $username, 
             "login" => $login, 
-            "password" => $hash];
-        array_push($usersData, $newUser);
-        // Conversion du tableau en chaine de caractères
-        $jsonUsersData = json_encode($usersData);
-        // Enregistrement de la chaine de caractères dons un fichier
-        file_put_contents(FILE_PATH, $jsonUsersData);
-        header("location:login.php");
-    }
+            "password" => $password];
 
-    /////////////////////////////////////////////
-    // redirection vers la page
-    // header("location:inscription.php");
+        if (authenticateUser($newUser)){
+            header("location:secret.php");
+        }
+        
+    }
 }
 ?>
 
@@ -45,7 +34,7 @@ if($isPosted){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="../css/5-Style_Security_Form.css" />
-    <title>Security Form - Inscription</title>
+    <title>Security Form - Login</title>
 </head>
 <body>
      <nav>
@@ -54,10 +43,9 @@ if($isPosted){
          <a href="http://localhost:8081/4-PHP-Persistence/security/inscription.php">Security inscription</a> - 
          <a href="http://localhost:8081/4-PHP-Persistence/security/login.php">Security login</a>
     </nav><br>
-    <h3>Security Form - Inscription</h3>
+    <h3>Security Form - Login</h3>
 
     <form method="POST">
-        <input type="text" name="username" placeholder="Votre Nom">
         <input type="text" name="login" placeholder="Votre Login">
         <input type="password" name="password" placeholder="Votre Mot de Passe">
         <button type="submit">Valider</button>
