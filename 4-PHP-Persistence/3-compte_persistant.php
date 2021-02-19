@@ -21,11 +21,10 @@ $accountMoves = json_decode($jsonContent, true);
 getForm($hasPostedData, $accountMoves, $errors, $hasError);
 
 
-                /****************
-                 *  SAVE Data   *
-                 ***************/
+                /****************************
+                 *  Traitement Formulaire   *
+                 ***************************/
                 
-
 // Traitement du formulaire
 $isPosted = filter_has_var(INPUT_POST, "label");
 
@@ -39,6 +38,10 @@ if($isPosted) {
     $validateAmount = filter_input(INPUT_POST, "amount", FILTER_VALIDATE_INT );
     $type = $_POST["type"];
 
+    
+                /****************
+                 *  SAVE Data   *
+                 ***************/
     // Ajout des données des input  seulement si la saisie n'est pas vide
     if(!empty($sanitizeLabel) && !empty($date) && !empty($sanitizeAmount)){
         array_push($accountMoves, ["label" => $sanitizeLabel, "date" => $date, "amount" => $validateAmount, "type" => $type]);
