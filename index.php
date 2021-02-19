@@ -14,19 +14,22 @@
     <div class="container">
         <div class="chapter">
             <h3>PHP-Intro</h3>
-            <?php include "1-PHP-Intro/fragments/nav-intro.html"?>
+            <?php include "1-PHP-Intro/nav-intro.html"?>
         </div>
         <div class="chapter">
             <h3>PHP-Tables</h3>
-            <?php include "2-PHP-Tables/fragments/nav-table.html"?>
+            <?php include "2-PHP-Tables/nav-table.html"?>
         </div>
         <div class="chapter">
             <h3>PHP-Form</h3>
-            <?php include "3-PHP-Form/fragments/nav-form.html"?>
+            <?php include "3-PHP-Form/nav-form.html"?>
+            
+            <h3>PHP-Persitence</h3>
+            <?php include "4-PHP-Persistence/nav-persistence.html"?>
         </div>
         <div class="chapter">
             <h3>PHP-Persitence</h3>
-            <?php include "4-PHP-Persistence/fragments/nav-persistence.html"?>
+            <?php include "5-PHP-DataBase/nav-database.html"?>
         </div>
     </div>
 
